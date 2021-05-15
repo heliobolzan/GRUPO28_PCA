@@ -1,7 +1,7 @@
 import random
 
 frutas = [['Morango'], ['Coco'], ['Banana'], ['Abacaxi'], ['Limão'], ['Laranja'], ['Maçã'], ['Pera'], ['Uva']]
-veiculos = [['Onibus'], ['Trem'], ['Carro'], ['Trator'], ['Moto'], ['Caminhão'], ['Carroça']]
+veiculos = [['Onibus'], ['Carro'], ['Moto'], ['Trem'], ['Carro'], ['Trator'], ['Caminhão'], ['Carroça']]
 animais = [['Macaco'], ['Girafa'], ['Gato'], ['Cachorro'], ['Gorila'], ['Zebra'], ['Boi'], ['Cavalo'], ['Rato']]
 listaErradas = list()
 listaCertas = list()
@@ -14,8 +14,8 @@ def f_jogo():
     lista_frutas = random.choice(frutas)
     lista_veiculos = random.choice(veiculos)
     lista_animais = random.choice(animais)
-    teste = (lista_frutas[0], lista_veiculos[0], lista_animais[0])
-    fase = random.choice(teste)
+    tudo = (lista_frutas[0], lista_veiculos[0], lista_animais[0])
+    fase = random.choice(tudo)
     
     print(f'Digite a relação do item: {fase}')
     print(f'[1] para Fruta\n'
@@ -56,8 +56,8 @@ def f_jogo():
 
     linha()
     querJogar= int(input('\nQuer jogar de novo?\n'
-                         '[1] Sim\n'
-                         '[2] Não: '))
+                         '[1] Sim     [2] Não: '))
+    linha()
     while querJogar == 1:
         print('\n\n')
         f_jogo()
@@ -70,6 +70,7 @@ linha()
 
 f_jogo()
 
-linha()
+
+print('\033[;1m' + '\033[1;33m' + 'Fim do jogo!! Seu resultado foi:' + '\033[0;0m')
 print(f'\nA quantidade de respostas certas foram: {len(listaCertas)}\nA quantidade de respostas erradas foram: {len(listaErradas)}')
 linha()
