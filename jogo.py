@@ -1,7 +1,7 @@
 import random
 
 frutas = [['Morango'], ['Coco'], ['Banana'], ['Abacaxi'], ['Limão'], ['Laranja'], ['Maçã'], ['Pera'], ['Uva']]
-veiculos = [['Onibus'], ['Carro'], ['Moto'], ['Trem'], ['Carro'], ['Trator'], ['Caminhão'], ['Carroça']]
+veiculos = [['Onibus'], ['Carro'], ['Moto'], ['Trem'], ['Trator'], ['Caminhão'], ['Carroça']]
 animais = [['Macaco'], ['Girafa'], ['Gato'], ['Cachorro'], ['Gorila'], ['Zebra'], ['Boi'], ['Cavalo'], ['Rato']]
 listaErradas = list()
 listaCertas = list()
@@ -9,6 +9,14 @@ listaCertas = list()
 def linha():
     print('\033[1;94m' + '~' * 30 + '\033[0;0m')
 
+
+def certaResposta():
+    print('\033[1;92m' + 'CERTA RESPOSTA!' + '\033[0;0m')
+
+
+def respostaErrada():
+    print('\033[1;31m' + 'RESPOSTA ERRADA!' + '\033[0;0m')
+    
 
 def f_jogo():
     lista_frutas = random.choice(frutas)
@@ -28,26 +36,26 @@ def f_jogo():
 
     if escolha == 1:
         if fase in lista_frutas:
-            print('\033[1;92m' + 'CERTA RESPOSTA!' + '\033[0;0m')
+            certaResposta()
             listaCertas.append(1)
         else:
-            print('\033[1;31m' + 'RESPOSTA ERRADA!' + '\033[0;0m')
+            respostaErrada()
             listaErradas.append(1)
 
     elif escolha == 2:
         if fase in lista_veiculos:
-            print('\033[1;92m' + 'CERTA RESPOSTA!' + '\033[0;0m')
+            certaResposta()
             listaCertas.append(1)
         else:
-            print('\033[1;31m' + 'RESPOSTA ERRADA!' + '\033[0;0m')
+            respostaErrada()
             listaErradas.append(1)
 
     elif escolha == 3:
         if fase in lista_animais:
-            print('\033[1;92m' + 'CERTA RESPOSTA!' + '\033[0;0m')
+            certaResposta()
             listaCertas.append(1)
         else:
-            print('\033[1;31m' + 'RESPOSTA ERRADA!' + '\033[0;0m')
+            respostaErrada()
             listaErradas.append(1)
 
 
